@@ -1,3 +1,10 @@
-from logging import getLogger
+import logging
+import sys
 
-logger = getLogger("hashi")
+logger = logging.getLogger("hashi")
+logger.setLevel(logging.INFO)
+default_handler = logging.StreamHandler(sys.stdout)
+default_handler.setFormatter(
+    logging.Formatter("[%(asctime)s %(name)s] %(levelname)s: %(message)s")
+)
+logger.addHandler(default_handler)
