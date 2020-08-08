@@ -2,17 +2,17 @@ import asyncio
 from functools import partial, wraps
 from inspect import iscoroutinefunction
 from itertools import count
-from typing import Any, Awaitable, Callable, Dict, List, NoReturn, Optional, Union
+from typing import (Any, Awaitable, Callable, Dict, List, NoReturn, Optional,
+                    Union)
 
 from pydantic import ValidationError
 from socketio import AsyncClient as SocketIOClient
 from socketio.exceptions import SocketIOError
 
-from .decorators import Sync2Async, Timing
-from .log import logger
-
 from .api import IOTClientAPI
+from .decorators import Sync2Async, Timing
 from .exceptions import NetworkError
+from .log import logger
 from .models import EventMessage, FriendMessage, GroupMessage
 
 EventHandler_T = Callable[[Dict[str, Any]], Awaitable[None]]

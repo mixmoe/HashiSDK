@@ -1,5 +1,6 @@
 import time
-from asyncio import get_running_loop, iscoroutinefunction, run_coroutine_threadsafe
+from asyncio import (get_running_loop, iscoroutinefunction,
+                     run_coroutine_threadsafe)
 from concurrent.futures.thread import ThreadPoolExecutor
 from functools import wraps
 from typing import Any, Awaitable, Callable
