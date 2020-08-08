@@ -1,0 +1,5 @@
+aiohttp~=3.6.2
+httpx~=0.14.0
+pydantic~=1.6.1
+python-socketio[asyncio_client]~=4.6.0
+websockets~=8.1
