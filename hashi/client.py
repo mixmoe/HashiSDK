@@ -2,8 +2,7 @@ import asyncio
 from functools import partial, wraps
 from inspect import iscoroutinefunction
 from itertools import count
-from typing import (Any, Awaitable, Callable, Dict, List, NoReturn, Optional,
-                    Union)
+from typing import Any, Awaitable, Callable, Dict, List, NoReturn, Optional, Union
 
 from pydantic import ValidationError
 from socketio import AsyncClient as SocketIOClient
@@ -203,6 +202,8 @@ class IOTClient:
 
     async def run(self) -> NoReturn:  # type:ignore
         await self.connect()
+        await self.heartbeat()
+
         try:
             await self.socket.wait()
         finally:
