@@ -10,10 +10,10 @@ from socketio import AsyncClient as SocketIOClient
 from socketio.exceptions import SocketIOError
 
 from .api import IOTClientAPI
-from .decorators import Sync2Async, Timing
-from .exceptions import NetworkError
-from .log import logger
 from .models import EventMessage, FriendMessage, GroupMessage
+from .utils.decorators import Sync2Async, Timing
+from .utils.exceptions import NetworkError
+from .utils.log import logger
 
 EventHandler_T = Callable[[Dict[str, Any]], Awaitable[None]]
 EventListener_T = Callable[[EventMessage], Awaitable[None]]

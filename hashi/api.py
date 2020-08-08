@@ -4,8 +4,8 @@ from typing import Any, Dict, Optional, Union
 
 from httpx import URL, AsyncClient, RequestError
 
-from .exceptions import APIError
-from .log import logger
+from .utils.exceptions import APIError
+from .utils.log import logger
 
 logger = logger.getChild("api")
 
